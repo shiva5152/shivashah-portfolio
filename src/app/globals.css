@@ -25,3 +25,42 @@ body {
     text-wrap: balance;
   }
 }
+
+.shine {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.shine::before {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  content: "";
+  display: block;
+  height: 100%;
+  left: -75%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 20%;
+  z-index: 2;
+}
+
+.shine:focus {
+  outline: none;
+  border: none;
+}
+
+.shine:hover::before,
+.shine:focus::before {
+  animation: shine 0.85s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
