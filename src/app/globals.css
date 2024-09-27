@@ -64,3 +64,41 @@ body {
     left: 125%;
   }
 }
+
+/* ... existing code ... */
+
+.tools-card {
+  border: 1px solid red;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  line-height: 1;
+  padding: 32px 20px;
+}
+
+.tools-card .tools-name span {
+  color: #0b0c0c;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tools-card .icon {
+  border: 1px solid rgba(11, 12, 12, 0.05);
+  background: #fff;
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.05);
+  min-width: 62px;
+  max-width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ... existing code ... */

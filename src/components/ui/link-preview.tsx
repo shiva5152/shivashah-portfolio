@@ -141,7 +141,7 @@ export const LinkPreview = ({
                       ? "https://www.linkedin.com/in/shiva5152/"
                       : url
                   }
-                  className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-neutral-200 dark:hover:border-neutral-800"
+                  className="block p-1 bg-gradient-to-r from-neutral-800 to-gray-700 border-2 border-transparent shadow rounded-xl "
                   style={{ fontSize: 0 }}
                 >
                   <Image
