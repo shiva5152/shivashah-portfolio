@@ -8,14 +8,16 @@ import Image from "next/image";
 export function CardDemo() {
   return (
     <Card>
+      <CardTitle className="text-center text-2xl text-cyan-500">
+        My current Tech Stack
+      </CardTitle>
+      {/* <CardDescription className="text-center">
+        A card that showcases a set of tools that you use to create your
+        product.
+      </CardDescription> */}
       <CardSkeletonContainer>
         <Skeleton />
       </CardSkeletonContainer>
-      <CardTitle>Damn good card</CardTitle>
-      <CardDescription>
-        A card that showcases a set of tools that you use to create your
-        product.
-      </CardDescription>
     </Card>
   );
 }
@@ -76,68 +78,56 @@ const Skeleton = () => {
   return (
     <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
       <div className="flex flex-row flex-wrap  justify-center items-center gap-2">
-        <Container className="h-8 w-8 circle-1">
-          <ClaudeLogo className="h-4 w-4 " />
-        </Container>
-        <Container className="h-12 w-12 circle-2">
-          <GoCopilot className="h-6 w-6 dark:text-white" />
-        </Container>
-        <Container className="circle-3">
-          <NextLogo className="h-8 w-8 dark:text-white" />
-        </Container>
-        <Container className="h-12 w-12 circle-4">
-          <MetaIconOutline className="h-6 w-6 " />
-        </Container>
-        <Container className="h-8 w-8 circle-5">
-          <GeminiLogo className="h-4 w-4 " />
-        </Container>
-        <Container className="circle-3">
+        <Container className=" circle-1">
           <ReactLogo className="h-10 w-10 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className=" circle-2">
           <ReduxLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className=" circle-3 ">
           <TailwindLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-4">
           <PrismaLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-2">
           <GraphQlLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
-          <DockerLogo className="h-8 w-8 dark:text-white" />
+        <Container className="circle-5">
+          <DockerLogo className="h-12 w-12 dark:text-white" />
         </Container>
         <Container className="circle-3">
           <AwsLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-4">
           <NodeJsLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-2">
           <NextLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-5">
           <TSLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-1">
           <JSLogo className="h-8 w-8 dark:text-white" />
         </Container>
         <Container className="circle-3">
           <GithubLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-4">
           <MongoDBLogo className="h-8 w-8 dark:text-white" />
         </Container>
         <Container className="circle-3">
           <SupabaseLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-1">
           <PostmanLogo className="h-8 w-8 dark:text-white" />
         </Container>
-        <Container className="circle-3">
+        <Container className="circle-5">
           <RedisLogo className="h-8 w-8 dark:text-white" />
+        </Container>
+        <Container className="circle-2">
+          <GitLogo className="h-8 w-8 dark:text-white" />
         </Container>
       </div>
 
@@ -256,7 +246,7 @@ export const CardSkeletonContainer = ({
       className={cn(
         "h-[15rem] md:h-[20rem] rounded-xl z-40",
         className,
-        showGradient &&
+        !showGradient &&
           "bg-neutral-300 dark:bg-[rgba(40,40,40,0.70)] [mask-image:radial-gradient(50%_50%_at_50%_50%,white_0%,transparent_100%)]"
       )}
     >
@@ -973,6 +963,18 @@ export const SupabaseLogo = ({ className }: { className?: string }) => {
       className={className}
       src="/supabase-logo-icon.svg"
       alt="Supabase"
+      width={109}
+      height={113}
+    />
+  );
+};
+
+export const GitLogo = ({ className }: { className?: string }) => {
+  return (
+    <Image
+      className={className}
+      src="/jira.svg"
+      alt="git"
       width={109}
       height={113}
     />

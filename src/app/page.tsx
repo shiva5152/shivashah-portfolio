@@ -2,6 +2,7 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import Tech from "@/components/Tech";
 import { CardDemo } from "@/components/ui/card";
+import { Experience } from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         {/* <Tech /> */}
         <CardDemo />
+        <Experience />
       </main>
     </div>
   );
