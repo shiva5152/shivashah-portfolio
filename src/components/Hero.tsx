@@ -1,9 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
 import { LinkPreview } from "@/components/ui/link-preview";
-import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const Hero = () => {
   useEffect(() => {
@@ -24,16 +22,16 @@ const Hero = () => {
       <div className="block relative lg:flex max-w-5xl mx-auto mt-10 md:mt-20 px-8">
         <div>
           <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
-            Trust me, I'm a{" "}
+            Trust me, I&#39;m a{" "}
             <span className="text-cyan-500">software Developer.</span>
           </h1>
           <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 leading-loose tracking-wide">
-            I'm a skilled web developer with knowledge of HTML/CSS and
+            {`I&#39;m a skilled web developer with knowledge of HTML/CSS and
             JavaScript, and expertise in frameworks like React, Node.js,
-            Express.js and Three.js. I'm a quick learner and collaborate closely
+            Express.js and Three.js. I&#39;m a quick learner and collaborate closely
             with clients to create efficient, scalable, and user-friendly
-            solutions that solve real-world problems. Let's work together to
-            bring your ideas to life!
+            solutions that solve real-world problems. Let&#39;s work together to
+            bring your ideas to life!`}
           </p>
           <p className="text-zinc-600 text-sm mt-2">
             ~ ChatGPT

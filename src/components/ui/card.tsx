@@ -1,9 +1,8 @@
 "use client";
-import { animate, motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { GoCopilot } from "react-icons/go";
+import { animate, motion } from "framer-motion";
 import Image from "next/image";
+import React, { useEffect } from "react";
 
 export function CardDemo() {
   return (
@@ -69,7 +68,7 @@ const Skeleton = () => {
   ];
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error: 'animate' function has an issue with the sequence type
     animate(sequence, {
       repeat: Infinity,
       repeatDelay: 1,
@@ -139,7 +138,7 @@ const Skeleton = () => {
     </div>
   );
 };
-const Sparkles = () => {
+export const Sparkles = () => {
   const randomMove = () => Math.random() * 2 - 1;
   const randomOpacity = () => Math.random();
   const random = () => Math.random();
