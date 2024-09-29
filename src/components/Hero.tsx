@@ -19,7 +19,7 @@ const Hero = () => {
   }, []);
   return (
     <div>
-      <div className="block relative lg:flex max-w-5xl mx-auto mt-10 md:mt-20 px-8">
+      <div className="block relative lg:flex max-w-5xl mx-auto mt-10  px-8">
         <div>
           <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
             Trust me, I&#39;m a{" "}
