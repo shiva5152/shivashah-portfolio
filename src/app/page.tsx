@@ -4,19 +4,34 @@ import { Experience } from "@/components/Experience";
 import Projects from "@/components/Projects";
 import { FloatingDockDemo } from "@/components/Navbar";
 import { SignupFormDemo } from "@/components/Contact";
+import PathVisualizer from "@/components/pathVisualizer";
+import PathfindingVisualizer from "@/components/PathfindingVisualizer";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen overflow-x-hidden p-8  font-[family-name:var(--font-geist-sans)]">
+    <div className=" min-h-screen overflow-x-hidden py-8  font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-6xl mx-auto">
         <FloatingDockDemo />
         <Hero />
-        {/* <Tech /> */}
         <CardDemo />
         <Experience />
         <Projects />
-
-        <SignupFormDemo />
+        <div className="flex w-full flex-col">
+          <div className="py-20 px-4 ">
+            <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+              Contact Me
+            </h2>
+            <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-lg text-justify">
+              I'm always looking for new opportunities to work on exciting
+              projects. Whether you have a question or just want to say hi, feel
+              free to reach out to me.
+            </p>
+          </div>
+          <div className="flex w-full">
+            <SignupFormDemo />
+            <PathfindingVisualizer />
+          </div>
+        </div>
       </main>
     </div>
   );

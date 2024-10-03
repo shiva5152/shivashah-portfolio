@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 
 export function CardDemo() {
   return (
-    <Card>
+    <Card className="mx-4">
       <CardTitle className="text-center text-2xl text-cyan-500">
         My current Tech Stack
       </CardTitle>
@@ -202,10 +202,7 @@ export const CardTitle = ({
 }) => {
   return (
     <h3
-      className={cn(
-        "text-lg font-semibold text-gray-800 dark:text-white py-2",
-        className
-      )}
+      className={cn("text-lg  text-gray-800 dark:text-white py-2", className)}
     >
       {children}
     </h3>
