@@ -3,6 +3,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+import { TypewriterEffect } from "./ui/typewritter-effect";
 
 const Hero = () => {
   useEffect(() => {
@@ -18,23 +19,32 @@ const Hero = () => {
       return () => clearTimeout(timeoutId); // Cleanup function
     }
   }, []);
+  const words = [{ text: "Software" }, { text: "Developer" }];
   return (
-    <div>
-      <div className="block w-full relative lg:flex mx-auto mt-10  px-4">
+    <div className="mb-20 w-full">
+      <div className=" w-full justify-between  relative flex mx-auto mt-10  px-4">
         <div>
           <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
-            Trust me, I&#39;m a{" "}
-            <span className="text-cyan-500">software Developer.</span>
+            Trust me, I&#39;m a
+            <br />
+            {/* {`<`} <span className="text-cyan-500"> Software Developer.</span>
+            {` />`} */}
+            {`< `}
+            <TypewriterEffect words={words} />
+            {` />`}
           </h1>
+
           <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 leading-loose tracking-wide">
-            {`I&#39;m a skilled web developer with knowledge of HTML/CSS and
-            JavaScript, and expertise in frameworks like React, Node.js,
-            Express.js and Three.js. I&#39;m a quick learner and collaborate closely
-            with clients to create efficient, scalable, and user-friendly
-            solutions that solve real-world problems. Let&#39;s work together to
-            bring your ideas to life!`}
+            Hello, my name is{" "}
+            <strong className="text-cyan-500">Shiva Shah</strong>. I'm a skilled
+            web developer with knowledge of HTML/CSS, JavaScript, and related
+            technologies, and expertise in frameworks like React, Node.js, and
+            Express.js. I'm a quick learner and collaborate closely with clients
+            to create efficient, scalable, and user-friendly solutions that
+            solve real-world problems. Let's work together to bring your ideas
+            to life!
           </p>
-          <p className="text-zinc-600 text-sm mt-2">
+          {/* <p className="text-zinc-600 text-sm mt-2">
             ~ ChatGPT
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,17 +55,17 @@ const Hero = () => {
             >
               <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
             </svg>
-          </p>
+          </p> */}
           <div className="mt-8 text-zinc-400 text-sm md:text-base max-w-2xl leading-loose tracking-wide">
-            Building{" "}
+            Student of mathematics 🎲
             <p
               data-state="closed"
               className="text-zinc-200 font-bold hover:text-cyan-500 transition duration-150 outline-none"
               // href="https://teachyst.com"
             >
-              Teachyst
+              Fast Learner
             </p>{" "}
-            next-gen LMS ✨
+            Product builder ✨
           </div>
           <div className="mt-8 hidden sm:block">
             <Link

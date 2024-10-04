@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 export function CardDemo() {
   return (
     <Card className="mx-4">
-      <CardTitle className="text-center text-2xl text-cyan-500">
+      <CardTitle className="text-center  text-lg md:text-4xl mb-4 text-white ">
         My current Tech Stack
       </CardTitle>
       {/* <CardDescription className="text-center">
