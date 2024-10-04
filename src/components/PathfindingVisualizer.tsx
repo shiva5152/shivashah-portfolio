@@ -88,7 +88,7 @@ const PathfindingVisualizer: React.FC = () => {
     <div className="flex flex-col gap-2 w-fit mx-auto">
       <div className="flex  flex-col gap-1">
         {grid.map((row, rowIdx) => (
-          <div className="flex gap-1">
+          <div key={rowIdx} className="flex gap-1">
             {row.map((node, nodeIdx) => {
               const { row, col, isFinish, isStart, isWall } = node;
               return (
