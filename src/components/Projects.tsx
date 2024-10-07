@@ -55,7 +55,7 @@ const Projects = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-25%"]);
 
   return (
-    <div>
+    <div id="projects" className="max-w-6xl mx-auto">
       <div className=" mx-auto py-20 px-4">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           My Recent Projects

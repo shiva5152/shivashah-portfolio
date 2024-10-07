@@ -187,7 +187,7 @@ export function Experience() {
     },
   ];
   return (
-    <div className="w-full">
+    <div id="experience" className="w-full">
       <Timeline data={data} />
     </div>
   );

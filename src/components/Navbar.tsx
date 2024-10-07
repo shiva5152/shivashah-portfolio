@@ -6,8 +6,12 @@ import {
   IconBrandX,
   IconExchange,
   IconHome,
-  IconNewSection,
+  IconPlugConnected,
   IconTerminal2,
+  IconBrandPrisma,
+  IconSkateboarding,
+  IconPhone,
+  IconMail,
 } from "@tabler/icons-react";
 import Image from "next/image";
 
@@ -18,64 +22,54 @@ export function FloatingDockDemo() {
       icon: (
         <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "/",
     },
 
     {
-      title: "Products",
+      title: "Skills",
+      icon: (
+        <IconBrandPrisma className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#skills",
+    },
+    {
+      title: "Experience",
+      icon: (
+        <IconSkateboarding className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#experience",
+    },
+    {
+      title: "Projects",
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
+      href: "#projects",
     },
     {
-      title: "Components",
+      title: "Connect",
       icon: (
-        <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconPlugConnected className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "#",
-    },
-    {
-      title: "Aceternity UI",
-      icon: (
-        <Image
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Changelog",
-      icon: (
-        <IconExchange className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
-    },
-    {
-      title: "GitHub",
-      icon: (
-        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "#",
+      href: "#contact",
     },
   ];
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-between w-full">
       <FloatingDock
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
+      <div className="flex items-center justify-end gap-4">
+        <div className="flex hover:text-cyan-500  items-center gap-1">
+          <IconPhone className="h-6 w-full hover:text-cyan-500 text-neutral-500 dark:text-neutral-300" />
+          <p className="text-sm whitespace-nowrap">+91 9911577254</p>
+        </div>
+        <div className="flex hover:text-cyan-500 items-center gap-1">
+          <IconMail className="h-full w-full hover:text-cyan-500text-neutral-500 dark:text-neutral-300" />
+          <p className="text-sm">shivashah5152@gmail.com</p>
+        </div>
+      </div>
     </div>
   );
 }

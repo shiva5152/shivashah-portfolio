@@ -1,23 +1,26 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { animate, motion } from "framer-motion";
+import { div } from "framer-motion/client";
 import Image from "next/image";
 import React, { useEffect } from "react";
 
 export function CardDemo() {
   return (
-    <Card className="mx-4">
-      <CardTitle className="text-center  text-lg md:text-4xl mb-4 text-white ">
-        My current Tech Stack
-      </CardTitle>
-      {/* <CardDescription className="text-center">
+    <div id="skills" className="pt-20">
+      <Card className="mx-4">
+        <CardTitle className="text-center  text-lg md:text-4xl mb-4 text-white ">
+          My current Tech Stack
+        </CardTitle>
+        {/* <CardDescription className="text-center">
         A card that showcases a set of tools that you use to create your
         product.
       </CardDescription> */}
-      <CardSkeletonContainer>
-        <Skeleton />
-      </CardSkeletonContainer>
-    </Card>
+        <CardSkeletonContainer>
+          <Skeleton />
+        </CardSkeletonContainer>
+      </Card>
+    </div>
   );
 }
 

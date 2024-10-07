@@ -10,13 +10,16 @@ import PathfindingVisualizer from "@/components/PathfindingVisualizer";
 export default function Home() {
   return (
     <div className=" min-h-screen overflow-x-hidden py-8  font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-6xl mx-auto">
-        {/* <FloatingDockDemo /> */}
+      <main
+        id="home"
+        className="flex flex-col gap-8 row-start-2 items-center max-w-6xl mx-auto"
+      >
+        <FloatingDockDemo />
         <Hero />
         <CardDemo />
         <Experience />
         <Projects />
-        <div className="flex w-full flex-col">
+        <div id="contact" className="flex w-full flex-col">
           <div className="py-20 px-4 ">
             <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
               Contact Me

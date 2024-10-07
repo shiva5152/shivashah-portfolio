@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
   const words = [{ text: "Software" }, { text: "Developer" }];
   return (
-    <div className="mb-20 w-full">
+    <div className=" w-full">
       <div className=" w-full justify-between  relative flex mx-auto mt-10  px-4">
         <div>
           <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
