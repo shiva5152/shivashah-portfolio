@@ -9,7 +9,8 @@ export function Experience() {
       title: "Full Stack Developer",
       date: "July 2023 - Present",
       image: "/metageeks_logo.png",
-      company: "Metageeks.tech",
+      company: "metageeks.tech",
+      linkedin: "https://www.linkedin.com/company/metageekstech/",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
@@ -79,7 +80,8 @@ export function Experience() {
       title: "Full Stack Trainee",
       date: "May 2023 - May 2023",
       image: "/metageeks_logo.png",
-      company: "Metageeks.tech",
+      company: "metageeks.tech",
+      linkedin: "https://www.linkedin.com/company/metageekstech/",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">

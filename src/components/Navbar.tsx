@@ -60,14 +60,18 @@ export function FloatingDockDemo() {
         mobileClassName="translate-y-20" // only for demo, remove for production
         items={links}
       />
-      <div className="flex items-center justify-end gap-4">
-        <div className="flex hover:text-cyan-500  items-center gap-1">
-          <IconPhone className="h-6 w-full hover:text-cyan-500 text-neutral-500 dark:text-neutral-300" />
-          <p className="text-sm whitespace-nowrap">+91 9911577254</p>
+      <div className=" hidden md:flex items-center justify-end gap-4">
+        <div className="group flex items-center gap-1">
+          <IconPhone className="h-6 w-full text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500" />
+          <p className="text-sm whitespace-nowrap group-hover:text-cyan-500">
+            +91 9911577254
+          </p>
         </div>
-        <div className="flex hover:text-cyan-500 items-center gap-1">
-          <IconMail className="h-full w-full hover:text-cyan-500text-neutral-500 dark:text-neutral-300" />
-          <p className="text-sm">shivashah5152@gmail.com</p>
+        <div className="group flex items-center gap-1">
+          <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500" />
+          <p className="text-sm group-hover:text-cyan-500">
+            shivashah5152@gmail.com
+          </p>
         </div>
       </div>
     </div>

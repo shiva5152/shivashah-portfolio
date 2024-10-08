@@ -9,7 +9,7 @@ import PathfindingVisualizer from "@/components/PathfindingVisualizer";
 
 export default function Home() {
   return (
-    <div className=" min-h-screen overflow-x-hidden py-8  font-[family-name:var(--font-geist-sans)]">
+    <div className=" min-h-screen overflow-x-hidden py-8 max-md:py-4 font-[family-name:var(--font-geist-sans)]">
       <main
         id="home"
         className="flex flex-col gap-8 row-start-2 items-center max-w-6xl mx-auto"
@@ -20,7 +20,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <div id="contact" className="flex w-full flex-col">
-          <div className="py-20 px-4 ">
+          <div className="py-20 px-4 max-md:py-10">
             <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
               Contact Me
             </h2>

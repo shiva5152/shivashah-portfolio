@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 
 export function CardDemo() {
   return (
-    <div id="skills" className="pt-20">
+    <div id="skills" className="pt-20 max-md:pt-10">
       <Card className="mx-4">
         <CardTitle className="text-center  text-lg md:text-4xl mb-4 text-white ">
           My current Tech Stack
@@ -78,7 +78,7 @@ const Skeleton = () => {
     });
   }, []);
   return (
-    <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
+    <div className="p-8 max-md:py-2 max-md:px-0 overflow-hidden h-full relative flex items-center justify-center">
       <div className="flex flex-row flex-wrap  justify-center items-center gap-2">
         <Container className=" circle-1">
           <ReactLogo className="h-10 w-10 dark:text-white" />
@@ -243,7 +243,7 @@ export const CardSkeletonContainer = ({
   return (
     <div
       className={cn(
-        "h-[15rem] md:h-[20rem] rounded-xl z-40",
+        "h-full md:h-[20rem] rounded-xl z-40",
         className,
         !showGradient &&
           "bg-neutral-300 dark:bg-[rgba(40,40,40,0.70)] [mask-image:radial-gradient(50%_50%_at_50%_50%,white_0%,transparent_100%)]"

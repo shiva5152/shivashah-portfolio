@@ -8,16 +8,18 @@ import {
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
+import { toast } from "react-hot-toast";
 
 export function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
+    toast.success("Form submitted successfully, I'll get back to you soon.");
   };
   return (
-    <div className="w-[35%]">
+    <div className="w-[35%] max-md:w-full">
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4  shadow-input bg-white dark:bg-black">
-        <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+        <h2 className="font-bold max-md:hidden text-xl text-neutral-800 dark:text-neutral-200">
           Get in touch
         </h2>
         {/* <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">

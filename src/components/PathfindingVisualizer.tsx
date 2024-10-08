@@ -85,7 +85,7 @@ const PathfindingVisualizer: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-fit mx-auto">
+    <div className="flex flex-col gap-2 w-fit max-md:hidden mx-auto">
       <div className="flex  flex-col gap-1">
         {grid.map((row, rowIdx) => (
           <div key={rowIdx} className="flex gap-1">
@@ -111,14 +111,14 @@ const PathfindingVisualizer: React.FC = () => {
         ))}
       </div>
       <div className="flex justify-between  items-center">
-        <p className="max-w-2xl">
+        <div className="max-w-2xl">
           Visualize <strong>Dijkstra's Algorithm</strong>{" "}
           <span className="text-sm text-gray-500">
             (*This algorithm is used to find the shortest path between two nodes
             in a graph, create a wall between the start and finish nodes to make
             it interesting)
           </span>
-        </p>
+        </div>
         <button onClick={visualizeDijkstra} className="p-[3px] relative">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">

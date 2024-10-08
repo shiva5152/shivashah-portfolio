@@ -6,6 +6,7 @@ import {
   motion,
 } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
@@ -14,6 +15,7 @@ interface TimelineEntry {
   content: React.ReactNode;
   date?: string;
   image?: string;
+  linkedin?: string;
 }
 
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
@@ -41,7 +43,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans "
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 ">
+      <div className="max-w-7xl mx-auto py-20 max-md:py-10 px-4 ">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           Here is My Software Development Journey
         </h2>
@@ -67,13 +69,16 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
               <br />
               {item.image && (
-                <Image
-                  title={item.company}
-                  src={item.image}
-                  alt={item.title}
-                  width={50}
-                  height={50}
-                />
+                <Link href={item?.linkedin || ""} target="_blank">
+                  <Image
+                    className="max-md:hidden"
+                    title={item.company}
+                    src={item.image}
+                    alt={item.title}
+                    width={50}
+                    height={50}
+                  />
+                </Link>
               )}
             </div>
 
@@ -84,7 +89,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <br />
               {item.date && (
                 <p className="text-sm mb-8  md:text-base text-neutral-500 dark:text-neutral-500">
-                  {item.date}
+                  {item.date}{" "}
+                  {item.linkedin && (
+                    <Link href={item?.linkedin || ""} target="_blank">
+                      ({item?.company})
+                    </Link>
+                  )}
                 </p>
               )}
               {item.content}{" "}

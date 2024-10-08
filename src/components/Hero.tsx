@@ -22,19 +22,19 @@ const Hero = () => {
   const words = [{ text: "Software" }, { text: "Developer" }];
   return (
     <div className=" w-full">
-      <div className=" w-full justify-between  relative flex mx-auto mt-10  px-4">
+      <div className="  w-full justify-between max-md:flex-col  relative flex mx-auto mt-10 max-md:mt-4 px-4">
         <div>
-          <h1 className="font-bold text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
+          <h1 className="font-bold max-md:text-lg text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
             Trust me, I&#39;m a
             <br />
             {/* {`<`} <span className="text-cyan-500"> Software Developer.</span>
             {` />`} */}
             {`< `}
-            <TypewriterEffect words={words} />
+            <TypewriterEffect className="max-md:text-lg" words={words} />
             {` />`}
           </h1>
 
-          <p className="text-zinc-400 text-sm md:text-base max-w-2xl mt-8 leading-loose tracking-wide">
+          <p className="text-zinc-400 text-justify text-sm md:text-base max-w-2xl mt-8 max-md:mt-4 leading-loose tracking-wide">
             Hello, my name is{" "}
             <strong className="text-cyan-500">Shiva Shah</strong>. I'm a skilled
             web developer with knowledge of HTML/CSS, JavaScript, and related
@@ -42,7 +42,7 @@ const Hero = () => {
             Express.js. I'm a quick learner and collaborate closely with clients
             to create efficient, scalable, and user-friendly solutions that
             solve real-world problems. Let's work together to bring your ideas
-            to life!
+            to life!. contact me{" "}
           </p>
           {/* <p className="text-zinc-600 text-sm mt-2">
             ~ ChatGPT
@@ -56,7 +56,7 @@ const Hero = () => {
               <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
             </svg>
           </p> */}
-          <div className="mt-8 text-zinc-400 text-sm md:text-base max-w-2xl leading-loose tracking-wide">
+          <div className="mt-8 text-zinc-400 text-sm md:text-base max-w-2xl max-md:mt-4 leading-loose tracking-wide">
             Student of mathematics 🎲
             <p
               data-state="closed"
@@ -67,7 +67,7 @@ const Hero = () => {
             </p>{" "}
             Product builder ✨
           </div>
-          <div className="mt-8 hidden sm:block">
+          <div className="mt-8 max-md:mt-4 hidden sm:block">
             <Link
               target="_blank"
               href="https://discord.gg/h9fhpVPXCV"
@@ -98,7 +98,7 @@ const Hero = () => {
               height={500}
             />
           </div>
-          <div className="flex flex-row justify-start md:justify-center space-x-2 mt-2">
+          <div className="flex flex-row  justify-center space-x-2 mt-2">
             <LinkPreview
               url="https://res.cloudinary.com/dnfzwjyfx/image/upload/v1727302989/linkedIn-preview_ohruye.png"
               className="font-bold bg-clip-text text-transparent bg-gradient-to-br from-purple-500 to-pink-500"
