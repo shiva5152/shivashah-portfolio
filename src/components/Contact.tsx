@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { toast } from "react-hot-toast";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendContactForm } from "@/lib/utils";
+import { span } from "framer-motion/client";
 
 export function SignupFormDemo() {
   const [formData, setFormData] = useState({
@@ -51,7 +52,7 @@ export function SignupFormDemo() {
       setFormError({ ...formError, email: "Email is required" });
       return;
     }
-    if (isEmail(formData.email)) {
+    if (!isEmail(formData.email)) {
       setFormError({ ...formError, email: "Invalid Email format" });
       return;
     }
@@ -64,6 +65,8 @@ export function SignupFormDemo() {
       setLoading(true);
       await sendContactForm(formData);
       setLoading(false);
+      setFormData({ name: "", email: "", message: "" });
+      toast.success("Message sent successfully, I will get back to you soon");
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -144,13 +147,13 @@ export function SignupFormDemo() {
           </div>
           <button
             type="button"
-            // disabled={loading}
+            disabled={loading}
             onClick={onSubmitHandler}
             className="p-[3px] relative w-full"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-              Send &rarr;
+              {loading ? <span>Sending...</span> : <span>Send &rarr;</span>}
             </div>
           </button>
         </form>
