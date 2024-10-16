@@ -24,7 +24,7 @@ const Hero = () => {
     <div className=" w-full">
       <div className="  w-full justify-between max-md:flex-col  relative flex mx-auto mt-10 max-md:mt-4 px-4">
         <div>
-          <h1 className="font-bold max-md:text-lg text-3xl md:text-5xl leading-tight text-zinc-50 max-w-3xl">
+          <h1 className="font-bold max-md:text-lg text-3xl md:text-5xl leading-tight text-neutral-500 dark:text-zinc-50 max-w-3xl">
             Trust me, I&#39;m a
             <br />
             {/* {`<`} <span className="text-cyan-500"> Software Developer.</span>
@@ -60,7 +60,7 @@ const Hero = () => {
             Student of mathematics 🎲
             <p
               data-state="closed"
-              className="text-zinc-200 font-bold hover:text-cyan-500 transition duration-150 outline-none"
+              className="dark:text-zinc-200 text-zinc-500 font-bold hover:text-cyan-500 transition duration-150 outline-none"
               // href="https://teachyst.com"
             >
               Fast Learner
@@ -70,12 +70,30 @@ const Hero = () => {
           <div className="mt-8 max-md:mt-4 hidden sm:block">
             <Link
               target="_blank"
-              href="https://discord.gg/h9fhpVPXCV"
+              href={
+                "https://drive.google.com/file/d/1CcBTOD_d_XNkBHHPCrl2XAPgIU5P-Zuk/view?usp=sharing"
+              }
               className="p-[3px] inline-block relative"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-              <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                <span> Resume 📄</span>
+              <div className="px-8 py-2 flex items-center gap-2  text-white  bg-transparent dark:bg-black rounded-[6px]  relative group transition duration-200  hover:bg-transparent">
+                <span> Resume </span>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+                    />
+                  </svg>
+                </span>
               </div>
             </Link>
             {/* <Link
@@ -92,7 +110,8 @@ const Hero = () => {
           <div className="shine max-w-96">
             <Image
               className="rounded-[20px]"
-              src="/profile.jpeg"
+              // src="/profile.jpeg"
+              src="https://media.licdn.com/dms/image/v2/D5603AQE6t9UR0HWzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704110686462?e=1734566400&v=beta&t=BOiM7tJVNntD9OFuBbXEE1J0PJpYiGjXzStEdG5WrO4"
               alt="Hero"
               width={500}
               height={500}

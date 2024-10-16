@@ -55,21 +55,21 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="flex items-center justify-between w-full">
+    <div className="flex items-center mt-2 justify-between w-full">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
+        mobileClassName="translate-y-20 " // only for demo, remove for production
         items={links}
       />
-      <div className=" hidden md:flex items-center justify-end gap-4">
+      <div className=" hidden md:flex items-center justify-end gap-4 px-4">
         <div className="group flex items-center gap-1">
           <IconPhone className="h-6 w-full text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500" />
-          <p className="text-sm whitespace-nowrap group-hover:text-cyan-500">
+          <p className="text-sm whitespace-nowrap text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500">
             +91 9911577254
           </p>
         </div>
         <div className="group flex items-center gap-1">
           <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500" />
-          <p className="text-sm group-hover:text-cyan-500">
+          <p className="text-sm text-neutral-500 dark:text-neutral-300 group-hover:text-cyan-500">
             shivashah5152@gmail.com
           </p>
         </div>

@@ -25,7 +25,7 @@ const Node: React.FC<TNode> = ({
   return (
     <div
       id={`node-${row}-${col}`}
-      className={`node ${extraClassName}`}
+      className={`node ${extraClassName} outline outline-1 outline-black/[0.1] dark:outline-[#ffffff33]`}
       onMouseDown={() => onMouseDown(row, col)}
       onMouseEnter={() => onMouseEnter(row, col)}
       onMouseUp={onMouseUp}

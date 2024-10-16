@@ -30,7 +30,7 @@ export default function Home() {
               free to reach out to me.
             </p>
           </div>
-          <div className="flex w-full">
+          <div className="flex w-full gap-1">
             <SignupFormDemo />
             <PathfindingVisualizer />
           </div>

@@ -112,7 +112,8 @@ body {
   width: 25px;
   height: 25px;
   /* outline: 1px solid rgb(175, 216, 248); */
-  outline: 1px solid #ffffff33;
+  /* outline: 1px solid #ffffff33; */
+
   display: inline-block;
   border-radius: 2px;
 }

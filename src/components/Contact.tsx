@@ -1,20 +1,62 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 import { toast } from "react-hot-toast";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import ReCAPTCHA from "react-google-recaptcha";
+import { sendContactForm } from "@/lib/utils";
+
+const schema = Yup.object().shape({
+  name: Yup.string().required().min(6).label("name"),
+  email: Yup.string().email().required().label("email"),
+  message: Yup.string().required().min(50).label("message"),
+});
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({ resolver: yupResolver(schema) });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  const [capValue, setCapValue] = useState();
+  const onCaptchaChange = (value: any) => {
+    if (error) setError(false);
+    setCapValue(value);
+  };
+
+  const onSubmitHandler = async (data: any) => {
+    try {
+      setLoading(true);
+      await sendContactForm(data);
+      setLoading(false);
+      reset();
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+      toast.error("Error while submitting the form, try later");
+    }
+  };
+
+  const onSubmitWithCaptchaCheck = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
-    toast.success("Form submitted successfully, I'll get back to you soon.");
+
+    // Check if captcha is verified
+    if (!capValue) {
+      toast.error("Please verify the captcha");
+      return;
+    }
+
+    // If captcha is verified, call handleSubmit
+    handleSubmit(onSubmitHandler)(e);
   };
   return (
     <div className="w-[35%] max-md:w-full">
@@ -27,7 +69,7 @@ export function SignupFormDemo() {
           yet
         </p> */}
 
-        <form className="my-8" onSubmit={handleSubmit}>
+        <form className="my-8" onSubmit={(e) => onSubmitWithCaptchaCheck(e)}>
           {/* <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="lastname">Last name</Label>
@@ -36,17 +78,28 @@ export function SignupFormDemo() {
           </div> */}
           <LabelInputContainer className="mb-4">
             <Label htmlFor="firstname">Full Name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input
+              id="firstname"
+              placeholder="Tyler"
+              type="text"
+              {...register("name")}
+            />
             <BottomGradient />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+            <Input
+              id="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+              {...register("email")}
+            />
             <BottomGradient />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="message">Message</Label>
             <textarea
+              {...register("message")}
               id="message"
               placeholder="Your message here"
               rows={6}
@@ -59,6 +112,13 @@ export function SignupFormDemo() {
             />
             <BottomGradient />
           </LabelInputContainer>
+          <div className="d-flex mt-2 mb-2 flex-column align-items-center">
+            <ReCAPTCHA
+              sitekey={`${process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY}`}
+              onChange={onCaptchaChange}
+            />
+            {<p style={{ color: "#f56565" }}>{error}</p>}
+          </div>
           <button type="submit" className="p-[3px] relative w-full">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">

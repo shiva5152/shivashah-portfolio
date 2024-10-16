@@ -105,6 +105,7 @@ export const LinkPreview = ({
               ? "https://www.linkedin.com/in/shiva5152/"
               : url
           }
+          target="_blank"
         >
           {children}
         </HoverCardPrimitive.Trigger>
@@ -143,6 +144,7 @@ export const LinkPreview = ({
                   }
                   className="block p-1 bg-gradient-to-r from-neutral-800 to-gray-700 border-2 border-transparent shadow rounded-xl "
                   style={{ fontSize: 0 }}
+                  target="_blank"
                 >
                   <Image
                     src={isStatic ? imageSrc : src}
