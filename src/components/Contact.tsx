@@ -4,41 +4,66 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { toast } from "react-hot-toast";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendContactForm } from "@/lib/utils";
 
-const schema = Yup.object().shape({
-  name: Yup.string().required().min(6).label("name"),
-  email: Yup.string().email().required().label("email"),
-  message: Yup.string().required().min(50).label("message"),
-});
-
 export function SignupFormDemo() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({ resolver: yupResolver(schema) });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [formError, setFormError] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const [capValue, setCapValue] = useState();
   const onCaptchaChange = (value: any) => {
-    if (error) setError(false);
     setCapValue(value);
   };
 
-  const onSubmitHandler = async (data: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormError({ ...formError, [e.target.name]: "" });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const isEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const onSubmitHandler = async () => {
+    if (!capValue) {
+      toast.error("Please verify the captcha");
+      return;
+    }
+    if (formData.name === "") {
+      setFormError({ ...formError, name: "Name is required" });
+      return;
+    }
+    if (formData.email === "") {
+      setFormError({ ...formError, email: "Email is required" });
+      return;
+    }
+    if (isEmail(formData.email)) {
+      setFormError({ ...formError, email: "Invalid Email format" });
+      return;
+    }
+    if (formData.message === "") {
+      setFormError({ ...formError, message: "Message is required" });
+      return;
+    }
+
     try {
       setLoading(true);
-      await sendContactForm(data);
+      await sendContactForm(formData);
       setLoading(false);
-      reset();
     } catch (error) {
       setLoading(false);
       console.log(error);
@@ -46,18 +71,6 @@ export function SignupFormDemo() {
     }
   };
 
-  const onSubmitWithCaptchaCheck = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Check if captcha is verified
-    if (!capValue) {
-      toast.error("Please verify the captcha");
-      return;
-    }
-
-    // If captcha is verified, call handleSubmit
-    handleSubmit(onSubmitHandler)(e);
-  };
   return (
     <div className="w-[35%] max-md:w-full">
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4  shadow-input bg-white dark:bg-black">
@@ -69,7 +82,7 @@ export function SignupFormDemo() {
           yet
         </p> */}
 
-        <form className="my-8" onSubmit={(e) => onSubmitWithCaptchaCheck(e)}>
+        <form className="my-8">
           {/* <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="lastname">Last name</Label>
@@ -79,11 +92,13 @@ export function SignupFormDemo() {
           <LabelInputContainer className="mb-4">
             <Label htmlFor="firstname">Full Name</Label>
             <Input
-              id="firstname"
               placeholder="Tyler"
               type="text"
-              {...register("name")}
+              onChange={handleChange}
+              name="name"
+              value={formData.name}
             />
+            {formError.name && <p className="text-red-500">{formError.name}</p>}
             <BottomGradient />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -92,15 +107,21 @@ export function SignupFormDemo() {
               id="email"
               placeholder="projectmayhem@fc.com"
               type="email"
-              {...register("email")}
+              onChange={handleChange}
+              name="email"
+              value={formData.email}
             />
+            {formError.email && (
+              <p className="text-red-500">{formError.email}</p>
+            )}
             <BottomGradient />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="message">Message</Label>
             <textarea
-              {...register("message")}
-              id="message"
+              onChange={handleChange}
+              name="message"
+              value={formData.message}
               placeholder="Your message here"
               rows={6}
               className="flex w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
@@ -110,16 +131,23 @@ export function SignupFormDemo() {
            dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
            group-hover/input:shadow-none transition duration-400"
             />
+            {formError.message && (
+              <p className="text-red-500">{formError.message}</p>
+            )}
             <BottomGradient />
           </LabelInputContainer>
-          <div className="d-flex mt-2 mb-2 flex-column align-items-center">
+          <div className=" mx-auto overflow-hidden my-4 w-full flex justify-center items-center">
             <ReCAPTCHA
-              sitekey={`${process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY}`}
+              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET}`}
               onChange={onCaptchaChange}
             />
-            {<p style={{ color: "#f56565" }}>{error}</p>}
           </div>
-          <button type="submit" className="p-[3px] relative w-full">
+          <button
+            type="button"
+            // disabled={loading}
+            onClick={onSubmitHandler}
+            className="p-[3px] relative w-full"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
             <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
               Send &rarr;

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import { TypewriterEffect } from "./ui/typewritter-effect";
+import { IconMail, IconPhone } from "@tabler/icons-react";
 
 const Hero = () => {
   useEffect(() => {
@@ -42,7 +43,20 @@ const Hero = () => {
             Express.js. I'm a quick learner and collaborate closely with clients
             to create efficient, scalable, and user-friendly solutions that
             solve real-world problems. Let's work together to bring your ideas
-            to life!. contact me{" "}
+            to life!.
+          </p>
+          <p className=" md:hidden flex flex-col">
+            <span>contact me</span>
+            <span className="group items-start gap-1">
+              {/* <IconPhone className="h-6 w-full text-cyan-500" /> */}
+              <span className="text-sm whitespace-nowrap text-cyan-500">
+                +91 9911577254
+              </span>
+            </span>
+            <span className="group items-start gap-1">
+              {/* <IconMail className="h-6 w-full text-cyan-500" /> */}
+              <p className="text-sm text-cyan-500">shivashah5152@gmail.com</p>
+            </span>
           </p>
           {/* <p className="text-zinc-600 text-sm mt-2">
             ~ ChatGPT
@@ -67,7 +81,7 @@ const Hero = () => {
             </p>{" "}
             Product builder ✨
           </div>
-          <div className="mt-8 max-md:mt-4 hidden sm:block">
+          <div className="mt-8 max-md:mt-4 max-md:mb-4  ">
             <Link
               target="_blank"
               href={
