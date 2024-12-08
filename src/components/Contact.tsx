@@ -95,7 +95,7 @@ export function SignupFormDemo() {
           <LabelInputContainer className="mb-4">
             <Label htmlFor="firstname">Full Name</Label>
             <Input
-              placeholder="Tyler"
+              placeholder="Tyler Smith"
               type="text"
               onChange={handleChange}
               name="name"

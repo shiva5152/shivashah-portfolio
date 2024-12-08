@@ -6,8 +6,75 @@ import { Lens } from "@/components/ui/lens";
 export function Experience() {
   const data = [
     {
+      title: "Software Engineer",
+      date: "Oct 2024 - Present",
+      image: "/shiprocket_logo.png",
+      company: "Shiprocket.in",
+      linkedin:
+        "https://www.linkedin.com/company/shiprocket/posts/?feedView=all",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Building a user interface that thousands of people{" "}
+            <strong> interact with daily </strong> .
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Reading legacy code, writing new code, committing changes, raising
+            pull requests, and <strong>contributing effectively</strong>.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            <strong> Conducting technical interviews</strong> for potential
+            candidates.
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Building social skills and interacting with the team to clarify and
+            <strong>deliver the desired features</strong>.
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Lens>
+              <Image
+                src="/shiprocket/img1.png"
+                alt="startup template"
+                width={500}
+                height={500}
+                className="rounded-lg aspect-video object-cover object-left h-auto w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </Lens>
+            <Lens>
+              <Image
+                src="/shiprocket/img2.jpg"
+                alt="startup template"
+                width={500}
+                height={500}
+                className="rounded-lg aspect-video object-left object-cover h-auto w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </Lens>
+
+            <Lens>
+              <Image
+                src="/shiprocket/img3.jpg"
+                alt="startup template"
+                width={500}
+                height={500}
+                className="rounded-lg aspect-video object-cover object-left h-auto w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </Lens>
+            <Lens>
+              <Image
+                src="/shiprocket/img4.jpg"
+                alt="startup template"
+                width={500}
+                height={500}
+                className="rounded-lg aspect-video object-cover object-left h-auto w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              />
+            </Lens>
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "Full Stack Developer",
-      date: "July 2023 - Present",
+      date: "July 2023 - Oct 2024",
       image: "/metageeks_logo.png",
       company: "metageeks.tech",
       linkedin: "https://www.linkedin.com/company/metageekstech/",
@@ -78,7 +145,7 @@ export function Experience() {
     },
     {
       title: "Full Stack Trainee",
-      date: "May 2023 - May 2023",
+      date: "May 2023 - July 2023",
       image: "/metageeks_logo.png",
       company: "metageeks.tech",
       linkedin: "https://www.linkedin.com/company/metageekstech/",
@@ -144,49 +211,49 @@ export function Experience() {
         </div>
       ),
     },
-    {
-      title: "Freelancer",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Implemented my skills in{" "}
-            <strong>various freelancing projects</strong>, gaining hands-on
-            experience and delivering <strong>quality work</strong> to clients.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            I <strong>collaborated with clients</strong> to understand their
-            requirements, provided regular updates, and ensured timely delivery
-            of <strong>high-quality solutions</strong>.
-          </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            This experience has significantly contributed to and{" "}
-            <strong>my professional growth</strong> ability to manage and
-            execute projects independently.
-          </p>
+    // {
+    //   title: "Freelancer",
+    //   content: (
+    //     <div>
+    //       <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+    //         Implemented my skills in{" "}
+    //         <strong>various freelancing projects</strong>, gaining hands-on
+    //         experience and delivering <strong>quality work</strong> to clients.
+    //       </p>
+    //       <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+    //         I <strong>collaborated with clients</strong> to understand their
+    //         requirements, provided regular updates, and ensured timely delivery
+    //         of <strong>high-quality solutions</strong>.
+    //       </p>
+    //       <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+    //         This experience has significantly contributed to and{" "}
+    //         <strong>my professional growth</strong> ability to manage and
+    //         execute projects independently.
+    //       </p>
 
-          <div className="grid grid-cols-2 gap-4">
-            <Lens>
-              <Image
-                src="/metageeks-work/game-terminal.png"
-                alt="hero template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-auto aspect-video w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-            </Lens>
-            <Lens>
-              <Image
-                src="/metageeks-work/cc-design.png"
-                alt="feature template"
-                width={500}
-                height={500}
-                className="rounded-lg object-cover h-auto aspect-video w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-              />
-            </Lens>
-          </div>
-        </div>
-      ),
-    },
+    //       <div className="grid grid-cols-2 gap-4">
+    //         <Lens>
+    //           <Image
+    //             src="/metageeks-work/game-terminal.png"
+    //             alt="hero template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-auto aspect-video w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //         </Lens>
+    //         <Lens>
+    //           <Image
+    //             src="/metageeks-work/cc-design.png"
+    //             alt="feature template"
+    //             width={500}
+    //             height={500}
+    //             className="rounded-lg object-cover h-auto aspect-video w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+    //           />
+    //         </Lens>
+    //       </div>
+    //     </div>
+    //   ),
+    // },
   ];
   return (
     <div id="experience" className="w-full">

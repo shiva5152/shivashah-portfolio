@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 interface TimelineEntry {
   company?: string;
@@ -49,7 +49,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-lg text-justify">
           I&apos;ve been working in the field of web development for the past 3
-          years with 1.5 years of professional experience. Here&apos;s a
+          years with 1.8 years of professional experience. Here&apos;s a
           timeline of my journey.
         </p>
       </div>

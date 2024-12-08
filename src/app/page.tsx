@@ -4,7 +4,6 @@ import { Experience } from "@/components/Experience";
 import Projects from "@/components/Projects";
 import { FloatingDockDemo } from "@/components/Navbar";
 import { SignupFormDemo } from "@/components/Contact";
-import PathVisualizer from "@/components/pathVisualizer";
 import PathfindingVisualizer from "@/components/PathfindingVisualizer";
 
 export default function Home() {
@@ -16,6 +15,7 @@ export default function Home() {
       >
         <FloatingDockDemo />
         <Hero />
+
         <CardDemo />
         <Experience />
         <Projects />

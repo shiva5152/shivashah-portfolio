@@ -87,6 +87,9 @@ const Skeleton = () => {
           <ReduxLogo className="h-8 w-8 dark:text-white" />
         </Container>
         <Container className=" circle-3 ">
+          <AngularLogo className="h-8 w-8 dark:text-white" />
+        </Container>
+        <Container className=" circle-3 ">
           <TailwindLogo className="h-8 w-8 dark:text-white" />
         </Container>
         <Container className="circle-4">
@@ -127,9 +130,6 @@ const Skeleton = () => {
         </Container>
         <Container className="circle-5">
           <RedisLogo className="h-8 w-8 dark:text-white" />
-        </Container>
-        <Container className="circle-2">
-          <GitLogo className="h-8 w-8 dark:text-white" />
         </Container>
       </div>
 
@@ -310,6 +310,31 @@ export const NextLogo = ({ className }: { className?: string }) => {
       <path
         fill="currentColor"
         d="m4.5 4.5.405-.293A.5.5 0 0 0 4 4.5h.5Zm3 9.5A6.5 6.5 0 0 1 1 7.5H0A7.5 7.5 0 0 0 7.5 15v-1ZM14 7.5A6.5 6.5 0 0 1 7.5 14v1A7.5 7.5 0 0 0 15 7.5h-1ZM7.5 1A6.5 6.5 0 0 1 14 7.5h1A7.5 7.5 0 0 0 7.5 0v1Zm0-1A7.5 7.5 0 0 0 0 7.5h1A6.5 6.5 0 0 1 7.5 1V0ZM5 12V4.5H4V12h1Zm-.905-7.207 6.5 9 .81-.586-6.5-9-.81.586ZM10 4v6h1V4h-1Z"
+      />
+    </svg>
+  );
+};
+export const AngularLogo = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={800}
+      height={800}
+      preserveAspectRatio="xMidYMid"
+      viewBox="-8 0 272 272"
+      className={className}
+    >
+      <path
+        fill="#E23237"
+        d="M.1 45.522 125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522Z"
+      />
+      <path
+        fill="#B52E31"
+        d="M255.104 44.725 125.908.697v270.444l108.277-59.866 20.919-166.55Z"
+      />
+      <path
+        fill="#FFF"
+        d="M126.107 32.274 47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917Zm.2 55.882 26.496 55.383h-49.806l23.31-55.383Z"
       />
     </svg>
   );
