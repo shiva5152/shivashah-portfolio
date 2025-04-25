@@ -124,8 +124,8 @@ const Hero = () => {
           <div className="shine max-w-96">
             <Image
               className="rounded-[20px]"
-              // src="/profile.jpeg"
-              src="https://media.licdn.com/dms/image/v2/D5603AQE6t9UR0HWzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704110686462?e=1734566400&v=beta&t=BOiM7tJVNntD9OFuBbXEE1J0PJpYiGjXzStEdG5WrO4"
+              src="/profile.jpeg"
+              // src="https://media.licdn.com/dms/image/v2/D5603AQE6t9UR0HWzXQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704110686462?e=1734566400&v=beta&t=BOiM7tJVNntD9OFuBbXEE1J0PJpYiGjXzStEdG5WrO4"
               alt="Hero"
               width={500}
               height={500}
